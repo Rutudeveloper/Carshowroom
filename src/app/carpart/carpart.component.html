@@ -1,0 +1,175 @@
+  <!-- <div *ngIf="car == 'yes'"> -->
+    <div class="container">       
+        <!-- The part Modal -->
+        <div class="modal" id="myModal4" style="font-size: small">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Register for customer</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <form [formGroup]="positionForm">
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <div class="mb-3 mt-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input
+                      type="name2"
+                      class="form-control"
+                      id="name2"
+                      placeholder="Enter Fullname "
+                      formControlName="name2"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Select Your Car :</label>
+                    <select
+                      class="form-select"
+                      type="text"
+                      id="text"
+                      placeholder="select Car "
+                      formControlName="email2"
+
+                    >
+                      <option>BMW</option>
+                      <option>CHEVROLET</option>
+                      <option>FORD</option>
+                      <option>HYUNDAI</option>
+                      <option>MAHINDRA</option>
+                      <option>TATA</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Select Model Line:</label>
+                    <select
+                      class="form-select"
+                      type="text"
+                      id="text"
+                      placeholder="select Car "
+                      formControlName="password2"
+
+                    >
+                      <option>ACCORD</option>
+                      <option>AMAZE</option>
+                      <option>BR-V</option>
+                      <option>BRIO</option>
+                      <option>CIVIC</option>
+                      <option>JAZZ</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="date" class="form-label">Select Year :</label>
+                    <select
+                      class="form-select"
+                      type="text"
+                      id="text"
+                      placeholder="select Car "
+                      formControlName="date1"
+
+                    >
+                      <option>2013</option>
+                      <option>2014</option>
+                      <option>2015</option>
+                      <option>2016</option>
+                      <option>2017</option>
+                      <option>2018</option>
+                      <option>2019</option>
+                      <option>2020</option>
+                      <option>2021</option>
+                      <option>2022</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="number" class="form-label">Number:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="number"
+                      placeholder="Enter your work exprience"
+                      formControlName="number1"
+
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn m-3 btn-success"
+                    data-bs-dismiss="modal"
+                   
+                    (click)="submit2()"
+                    *ngIf="filleverform2 == 'no'"
+                  >
+                    Submit
+                  </button>
+                  <button
+                    type="Update"
+                    class="btn m-3 btn-warning"
+                    data-bs-dismiss="modal"
+                    (click)="update2()"
+                    *ngIf="filleverform2 == 'yes'"
+                  >
+                    Update
+                  </button>
+                  <button type="clear" class="btn m-3 btn-danger" (click)="clear()">
+                    clear
+                  </button>
+               
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+        <p
+          style="
+            font-family: 'FontAwesome';
+            margin-top: 5%;
+            text-align: center;
+            font-size: -webkit-xxx-large;
+          "
+        >
+          Part List
+        </p>
+        <table class="table table-bordered table-sm">
+          <thead>
+            <tr>
+              <th>FullName</th>
+              <th>Selcted Car</th>
+              <th>Selcted MOdel line</th>
+              <th>Selcted date</th>
+              <th>Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item2 of partList; let i = index">
+              <td>{{ item2.name2 }}</td>
+              <td>{{ item2.email2 }}</td>
+              <td>{{ item2.password2 }}</td>
+              <td>{{ item2.date1 }}</td>
+              <td>{{ item2.number1 }}</td>
+              <td>
+                <button
+                  type="edit"
+                  class="btn m-1 btn-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal4"
+                  (click)="edit2(i)"
+                >
+                  edit
+                </button>
+                <button
+                  type="=delete"
+                  class="btn m-1 btn-danger"
+                  (click)="delete2(i)"
+                >
+                  delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

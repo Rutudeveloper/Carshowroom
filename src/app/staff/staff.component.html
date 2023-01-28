@@ -1,0 +1,166 @@
+<!-- <div *ngIf="staff == 'no'"> -->
+    <div class="container">
+          
+        <!-- The staff Modal -->
+        <div class="modal" id="myModal3" style="font-size: small">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Register for staff</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <form [formGroup]="positionForm">
+                <!-- Modal body -->
+              <div class="modal-body">
+                <form action="/action_page.php">
+                  <div class="mb-3 mt-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input
+                      type="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Enter Fullname "
+                     formControlName="name1"
+                    />
+                    <div class="error" *ngIf="validation1=='yes' && positionForm.controls['name1'].errors">
+                      enter the name......!
+                     </div>
+                     <div class="error" *ngIf="validation1=='yes' && positionForm.controls['name1'].errors">
+                       minimum lenght should be 4......!
+                     </div>
+                   </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Enter email"
+                      formControlName="email1"
+                      />
+                      <div class="error" *ngIf="validation1=='yes' && positionForm.controls['email1'].errors">
+                        enter the email......!
+                       </div>
+                 
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Password:</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="pwd"
+                      placeholder="Enter password"
+                      formControlName="password1"
+                      />
+                      <div class="error" *ngIf="validation1=='yes' && positionForm.controls['password1'].errors">
+                        enter the password......!
+                       </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="Class" class="form-label">Previous work</label>
+                    <input
+                      type="Class"
+                      class="form-control"
+                      id="Class"
+                      placeholder="Enter Class"
+                      formControlName="previous"
+                      />
+                      <div class="error" *ngIf="validation1=='yes' && positionForm.controls['previous'].errors">
+                        enter the previous......!
+                       </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="number" class="form-label">Duration</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="number"
+                      placeholder="Enter roli no"
+                      formControlName="duration"
+                      />
+                      <div class="error" *ngIf="validation1=='yes' && positionForm.controls['duration'].errors">
+                        enter the duration......!
+                       </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn m-3 btn-success"
+                 
+                    (click)="submit1()"
+                   
+                  >
+                    Submit
+                  </button>
+                  <button
+                    type="Update"
+                    class="btn m-3 btn-warning"
+               
+                    (click)="update1()"
+                    *ngIf="filleverform1 == 'no'"
+                  >
+                    Update
+                  </button>
+                  <button type="clear" class="btn m-3 btn-danger" (click)="clear()">
+                    clear
+                  </button>
+                </form>
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
+              <p
+                style="
+                  font-family: 'FontAwesome';
+                  margin-top: 5%;
+                  text-align: center;
+                  font-size: -webkit-xxx-large;
+                "
+              >
+                Staff List
+              </p>
+              <table class="table table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th>FullName</th>
+                    <th>Email</th>
+                    <th>password</th>
+                    <th>Previous Hospital</th>
+                    <th>Working Duration</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item1 of staffList; let i = index">
+                    <td>{{ item1.name1 }}</td>
+                    <td>{{ item1.email1 }}</td>
+                    <td>{{ item1.password1 }}</td>
+                    <td>{{ item1.previous }}</td>
+                    <td>{{ item1.duration }}</td>
+                    <td>
+                      <button
+                        type="edit"
+                        class="btn m-1 btn-warning"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal3"
+                        (click)="edit1(i)"
+                      >
+                        edit
+                      </button>
+                      <button
+                        type="=delete"
+                        class="btn m-1 btn-danger"
+                        (click)="delete1(i)"
+                      >
+                        delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>

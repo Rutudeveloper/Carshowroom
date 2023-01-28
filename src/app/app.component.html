@@ -1,0 +1,298 @@
+<!--First page-->
+<!-- <div *ngIf="nextpage == 'no'"> -->
+<div>
+  <!--nav-->
+  <div>
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar" role="banner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0 site-logo">
+              <a href="index.html" class="text-white mb-0"> </a>
+            </h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav
+              class="site-navigation position-relative text-right"
+              role="navigation"
+            >
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active">
+                  <a href="index.html"><span>Home</span></a>
+                </li>
+                <li class="has-children">
+                  <a href="about.html"><span>Dropdown</span></a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                    <li class="has-children">
+                      <a href="#">Dropdown</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Menu One</a></li>
+                        <li><a href="#">Menu Two</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="listings.html"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal2"
+                    routerLink="car"
+                    (click)="carbtn()"
+                    style="width: 80%; margin-left: 24px ;"
+                    ><span>Car</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="listings.html"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal3"
+                    routerLink="staff"
+                    (click)="staffbtn()"
+                    style="width: 80%; margin-left: 14px"
+                    ><span>Staff</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="about.html"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal4"
+                    (click)="partbtn()"
+                    routerLink="carpart"
+                    (click)="partbtn()"
+                    style="width: 80%; margin-left: 8px"
+                    ><span>CarParts</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="contact.html"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal5"
+                    (click)="billbtn()"
+                    routerLink="bill"
+                    (click)="billbtn()"
+                    style="width: 80%; margin-left: 24px"
+                    ><span>Bills</span></a
+                  >
+                </li>
+                <!-- <li>
+                  <a (click)="open1()">
+                    <span
+                      >Next Page<i
+                        class="fa fa-hand-o-right"
+                        aria-hidden="true"
+                      ></i></span
+                  ></a>
+                </li> -->
+                <li class="active">
+                  <a
+                    routerLink="login"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal"
+                    ><button class="btn btn-success m-1">
+                      <i class="fa fa-fw fa-user"></i> Login
+                    </button></a
+                  >
+                </li>
+                <li class="active">
+                  <a href="L" data-bs-toggle="modal" data-bs-target="#myModalr"
+                    ><button class="btn btn-primary">
+                      <i class="fa fa-fw fa-user"></i> Registration
+                    </button></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div
+            class="d-inline-block d-xl-none ml-md-0 mr-auto py-3"
+            style="position: relative; top: 3px"
+          >
+            <a href="#" class="site-menu-toggle js-menu-toggle text-white"
+              ><span class="icon-menu h3"></span
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- img with matter-->
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img
+          src="../assets/bgcar1.jpg"
+          alt="New York"
+          width="100%"
+          height="700"
+        />
+        <div class="carousel-caption"></div>
+      </div>
+
+      <div class="item">
+        <img
+          src="../assets/bg car.jpg"
+          alt="Chicago"
+          width="100%"
+          height="700"
+        />
+        <div class="carousel-caption"></div>
+      </div>
+
+      <div class="item">
+        <img
+          src="../assets/bgcar2.jpg"
+          alt="Los Angeles"
+          width="100%"
+          height="700"
+        />
+        <div class="carousel-caption"></div>
+      </div>
+      <div class="item">
+        <img
+          src="../assets/bgcar.jpg"
+          alt="New York"
+          width="100%"
+          height="700"
+        />
+        <div class="carousel-caption"></div>
+      </div>
+      <div class="item">
+        <img
+          src="../assets/bgcar3.jpg"
+          alt="New York"
+          width="100%"
+          height="700"
+        />
+        <div class="carousel-caption"></div>
+      </div>
+      <div class="item">
+        <img
+          src="../assets/bgcar4.jpg"
+          alt="New York"
+          width="100%"
+          height="700"
+        />
+        <div class="carousel-caption"></div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a
+      class="left carousel-control"
+      href="#myCarousel"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="right carousel-control"
+      href="#myCarousel"
+      role="button"
+      data-slide="next"
+    >
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <h3>Models</h3>
+  <router-outlet></router-outlet>
+
+  <div class="container c1 text-center">
+    <p><em>We love music!</em></p>
+    <p>We have created a fictional band website. Lorem ipsum..</p>
+    <br />
+    <div class="row">
+      <div class="col-sm-4">
+        <p class="text-center"><strong>INNOVATION</strong></p>
+        <br />
+        <a href="#demo" data-toggle="collapse">
+          <img
+            src="../assets/bg car.jpg"
+            class="img-circle person"
+            alt="Random Name"
+            width="255"
+            height="255"
+          />
+        </a>
+        <div id="demo" class="collapse">
+          <p>INNOVATION</p>
+          <p>Beyond Mobility</p>
+          <p>Member since 1988</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <p class="text-center"><strong>BRAND </strong></p>
+        <br />
+        <a href="#demo2" data-toggle="collapse">
+          <img
+            src="../assets/bgcar.jpg"
+            class="img-circle person"
+            alt="Random Name"
+            width="255"
+            height="255"
+          />
+        </a>
+        <div id="demo2" class="collapse">
+          <p>BRAND</p>
+          <p>#The Drive Within</p>
+          <p>Member since 1988</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <p class="text-center"><strong>BRAND </strong></p>
+        <br />
+        <a href="#demo3" data-toggle="collapse">
+          <img
+            src="../assets/bgcar2.jpg"
+            class="img-circle person"
+            alt="Random Name"
+            width="255"
+            height="255"
+          />
+        </a>
+        <div id="demo3" class="collapse">
+          <p>BRAND</p>
+          <p>Live the SUV life</p>
+          <p>Member since 2005</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+<!-- The login  Modal -->
+<app-login></app-login>
+<!-- The registration  Modal -->
+<app-registration></app-registration>

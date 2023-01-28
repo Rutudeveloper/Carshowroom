@@ -1,0 +1,173 @@
+ <!-- <div *ngIf="bill == 'yes'"> -->
+    <div class="container"  style="font-size: medium">
+        <!-- The car Modal -->
+ <div class="modal" id="myModal2" style="font-size: small">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <h4 class="modal-title">Register for Doctor</h4>
+         <button
+           type="button"
+           class="btn-close"
+           data-bs-dismiss="modal"
+         ></button>
+       </div>
+
+       <!-- Modal body -->
+       <form [formGroup]="positionForm">
+       <div class="modal-body">
+        
+           <div class="mb-3 mt-3">
+             <label for="name" class="form-label">Car Owner Name:</label>
+             <input
+               type="name"
+               class="form-control"
+               id="name"
+               placeholder="Enter Ownername "
+              formControlName="name"
+             />
+             <div >
+             
+             <div class="error" *ngIf="validation=='yes' && positionForm.controls['name'].errors?.['required']">
+              enter the name......!
+             </div>
+             <div class="error" *ngIf="validation=='yes' && positionForm.controls['name'].errors">
+               minimum lenght should be 4......!
+             </div>
+            </div>
+           </div>
+           <div class="mb-3">
+             <label for="email" class="form-label">Owner Email:</label>
+             <input
+               type="email"
+               class="form-control"
+               id="email"
+               placeholder="Enter Owner email"
+               formControlName="email"
+               />
+               <div class="error" *ngIf="validation=='yes' && positionForm.controls['email'].errors">
+                enter the user email......!
+               </div>
+           </div>
+           <div class="mb-3">
+             <label for="pwd" class="form-label">Owner number:</label>
+             <input
+               type="phone number"
+               class="form-control"
+               id="number"
+               placeholder="Enter Owner Number"
+               formControlName="ownernumber"
+               />
+               <div class="error" *ngIf="validation=='yes' && positionForm.controls['ownernumber'].errors">
+                enter the user number......!
+               </div>
+           </div>
+           <div class="mb-3">
+             <label for="Class" class="form-label">Owner Address:</label>
+             <textarea
+               type="Class"
+               class="form-control"
+               id="text"
+               placeholder="Enter Owner Address"
+               formControlName="address"
+              >
+            </textarea>
+            <div class="error" *ngIf="validation=='yes' && positionForm.controls['address'].errors">
+              enter the user permanent address......!
+             </div>
+           </div>
+           <div class="mb-3">
+             <label for="number" class="form-label">Owner Detail:</label>
+             <input
+               type="text"
+               class="form-control"
+               id="number"
+               placeholder="Enter Owner full Detail"
+               formControlName="detail"
+               
+             />
+             <div class="error" *ngIf="validation=='yes' && positionForm.controls['detail'].errors">
+              enter the user details......!
+             </div>
+           </div>
+           <button
+             type="submit"
+             class="btn m-3 btn-success"
+           
+            
+             (click)="submit()"
+             *ngIf="filleverform == 'no'"
+           >
+             Submit
+           </button>
+           <button
+             type="Update"
+             class="btn m-3 btn-warning"
+             data-bs-dismiss="modal"
+             
+             (click)="update()"
+             *ngIf="filleverform == 'yes'"
+           >
+             Update
+           </button>
+           <button type="clear" class="btn m-3 btn-danger" (click)="clear()">
+             clear
+           </button>
+    
+       </div>
+      </form>
+     </div>
+   </div>
+ </div>
+       <p
+         style="
+           font-family: 'FontAwesome';
+           margin-top: 5%;
+           text-align: center;
+           font-size: -webkit-xxx-large;
+         "
+       >
+         Car Owner List
+       </p>
+       <table class="table table-bordered table-sm">
+         <thead>
+           <tr>
+             <th>Car Owner Name</th>
+             <th>Owner Email</th>
+             <th>Owner number</th>
+             <th>Owner Address</th>
+             <th>Car Details</th>
+             <th></th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let item of carList; let i = index">
+             <td>{{ item.name }}</td>
+             <td>{{ item.email }}</td>
+             <td>{{ item.ownernumber }}</td>
+             <td>{{ item.address }}</td>
+             <td>{{ item.detail }}</td>
+             <td>
+               <button
+                 type="edit"
+                 class="btn m-1 btn-warning"
+                 data-bs-toggle="modal"
+                 data-bs-target="#myModal2"
+                 (click)="edit(i)"
+               >
+                 edit
+               </button>
+               <button
+                 type="=delete"
+                 class="btn m-1 btn-danger"
+                 (click)="delete(i)"
+               >
+                 delete
+               </button>
+             </td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+ 

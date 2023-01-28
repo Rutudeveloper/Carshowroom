@@ -1,0 +1,200 @@
+<div class="wrapper d-flex">
+    <nav id="sidebar" style="width: 100%; background: black">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          <i class="fa fa-bars"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+      </div>
+      <div class="p-4">
+        <h1>
+          <a href="index.html" class="logo"
+            ><img src="../assets/logo.jpg" width="50%" />
+          </a>
+        </h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="a">
+            <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-user mr-3"></span> About</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-suitcase mr-3"></span> Gallery</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+          </li>
+        </ul>
+  
+        <div class="mb-5">
+          <h3 class="h6 mb-3">Subscribe for newsletter</h3>
+          <form action="#" class="subscribe-form">
+            <div class="form-group d-flex">
+              <div class="icon"><span class="icon-paper-plane"></span></div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Email Address"
+              />
+            </div>
+            <br /><br />
+          </form>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Page Content  (tables)-->
+    <div class="container-fluid m-2" style="font-size: small">
+      <nav class="navlogin" style="float: right">
+        <ul>
+          <li class="active">
+            <a routerLink="login" data-bs-toggle="modal" data-bs-target="#myModal"
+              ><button class="btn btn-success m-1" style="font-size: small">
+                <i class="fa fa-fw fa-user"></i> Login
+              </button></a
+            >
+          </li>
+          <li class="active">
+            <a routerLink="reg" data-bs-toggle="modal" data-bs-target="#myModal"
+              ><button class="btn btn-primary" style="font-size: small">
+                <i class="fa fa-fw fa-user"></i> Registration
+              </button></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- <div class="row">
+  
+  <div class="col-lg-4">
+    <a href="L" data-bs-toggle="modal" data-bs-target="#myModal"><button
+      class="btn btn-success m-1"  style="height: 60%;float: right;
+      width: 203%;"><i class="fa fa-fw fa-user"></i> Login</button></a>
+  </div>
+  <div class="col-lg-4">
+    <a href="L" data-bs-toggle="modal" data-bs-target="#myModalr"><button
+      class="btn btn-primary" style="height: 60%;float: right;
+      width: 203%;"><i class="fa fa-fw fa-user"></i> Registration</button></a>
+  </div>
+  </div> -->
+      <ul class="nav" style="width: 170%">
+        <li class="nav-item m-2">
+          <a
+            class="nav-link"
+           
+            ><button style="background-color: aliceblue">
+              <img
+                src="../assets/shortcar.jpg"
+                style="width: 224px; height: 153px"
+              /></button
+          ></a>
+          <button 
+          data-bs-toggle="modal"
+          data-bs-target="#myModal2"
+          routerLink="car"
+            type="button"
+            (click)="carbtn()"
+            class="btn btn-success"
+            style="width: 80%; margin-left: 24px"
+          >
+            Cars
+          </button>
+        </li>
+        <li class="nav-item m-2">
+          <a
+            class="nav-link"
+            (click)="staffbtn()"
+           
+            ><button style="background-color: aliceblue; margin-left: -18px">
+              <img
+                src="../assets/shortcar1.jpg"
+                style="width: 185px; height: 155px"
+              /></button
+          ></a>
+          <button 
+          data-bs-toggle="modal"
+          data-bs-target="#myModal3"
+          routerLink="staff"
+          type="button"
+          (click)="staffbtn()"
+          class="btn btn-success"
+          style="width: 80%; margin-left: 14px"
+        >
+          Staff
+        </button>
+        </li>
+        <li class="nav-item m-2">
+          <a
+            class="nav-link"
+          
+            ><button style="background-color: aliceblue; margin-left: -18px">
+              <img
+                src="../assets/staff.jpg"
+                style="width: 103%; height: 156px"
+              /></button
+          ></a>
+          <button 
+          data-bs-toggle="modal"
+          data-bs-target="#myModal4"
+          (click)="partbtn()"
+          routerLink="carpart"
+          type="button"
+          (click)="partbtn()"
+          class="btn btn-success"
+          style="width: 80%; margin-left: 8px"
+        >
+          Car Parts
+        </button>
+        </li>
+        <li class="nav-item m-2">
+          <a
+            class="nav-link"
+            
+            ><button style="background-color: aliceblue;">
+              <img
+                src="../assets/bills.jpg"
+                style="width: 103%; height: 156px"
+              /></button
+          ></a>
+          <button 
+          data-bs-toggle="modal"
+            data-bs-target="#myModal5"
+            (click)="billbtn()"
+            routerLink="bill"
+          type="button"
+          (click)="billbtn()"
+          class="btn btn-success"
+          style="width: 80%; margin-left: 24px"
+        >
+          Bill
+        </button>
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+      <!--car table-->
+      <!-- <app-car></app-car> -->
+  
+      <!--staff table-->
+      <!-- <app-staff></app-staff> -->
+  
+      <!--part table-->
+      <!-- <app-carpart></app-carpart> -->
+  
+      <!--bill table-->
+      <!-- <app-bill></app-bill> -->
+  
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+    </div>
+  </div>

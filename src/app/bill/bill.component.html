@@ -1,0 +1,100 @@
+<!-- <div *ngIf="car == 'yes'"> -->
+<div class="container">
+
+  <!-- The billing Modal -->
+  <div class="modal" id="myModal5" style="font-size: small">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Billing</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form [formGroup]="positionForm">
+          <!-- Modal body -->
+          <div class="modal-body">
+
+            <div class="mb-3 mt-3">
+              <label for="text" class="form-label">Cars</label>
+              <select class="form-select" type="text" id="text" placeholder="select Car " formControlName="discription">
+                <option>BMW</option>
+                <option>CHEVROLET</option>
+                <option>FORD</option>
+                <option>HYUNDAI</option>
+                <option>MAHINDRA</option>
+                <option>TATA</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="number" class="form-label">Quantity:</label>
+              <input type="number" class="form-control" id="number" placeholder="Enter Quantity"
+                formControlName="qty" />
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Date:</label>
+              <input type="date" class="form-control" id="date" placeholder="Enter date" formControlName="date" />
+            </div>
+            <div class="mb-3">
+              <label for="number" class="form-label">Rate:</label>
+              <input type="number" class="form-control" id="number" placeholder="Enter Rate" formControlName="rate" />
+            </div>
+            <div class="mb-3">
+              <label for="number" class="form-label">Amount:</label>
+              <input type="number" class="form-control" name placeholder="Enter Amount" formControlName="amount" />
+            </div>
+            <button type="submit" class="btn m-3 btn-success" data-bs-dismiss="modal" (click)="submit4()"
+              *ngIf="filleverform3 == 'no'">
+              Submit
+            </button>
+            <button type="Update" class="btn m-3 btn-warning" data-bs-dismiss="modal" (click)="update4()"
+              *ngIf="filleverform3 == 'yes'">
+              Update
+            </button>
+            <button type="clear" class="btn m-3 btn-danger" (click)="clear()">
+              clear
+            </button>
+      </div>
+    </form>
+ 
+    </div>
+  </div>
+</div>
+<p style="
+                  font-family: 'FontAwesome';
+                  margin-top: 5%;
+                  text-align: center;
+                  font-size: -webkit-xxx-large;
+                ">
+  car Billing
+</p>
+<table class="table table-bordered table-sm">
+  <thead>
+    <tr>
+      <th>Discription</th>
+      <th>Quantity</th>
+      <th>Date</th>
+      <th>Rate</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item2 of billList; let i = index">
+      <td>{{ item2.discription }}</td>
+      <td>{{ item2.qty }}</td>
+      <td>{{ item2.date }}</td>
+      <td>{{ item2.rate }}</td>
+      <td>{{ item2.amount }}</td>
+
+      <td>
+        <button type="edit" class="btn m-1 btn-warning" data-bs-toggle="modal" data-bs-target="#myModal5"
+          (click)="edit4(i)">
+          edit
+        </button>
+        <button type="=delete" class="btn m-1 btn-danger" (click)="delete4(i)">
+          delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
